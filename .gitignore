@@ -1,0 +1,11 @@
+# Backend (Java/Maven)
+Deliciousweb/target/
+*.class
+
+# Frontend (React/Node)
+delicious-frontend/node_modules/
+delicious-frontend/dist/
+
+# IDE
+nbproject/private/
+.vscode/
