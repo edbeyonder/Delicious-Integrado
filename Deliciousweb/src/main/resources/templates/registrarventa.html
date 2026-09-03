@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Venta</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<a th:href="@{/dashboard}" class="btn-regresar">
+    &#11013; Regresar
+</a>
+
+<div class="form-container">
+<div class="sales-form">
+<h2>Registrar venta</h2>
+
+<div>
+    <select id="selectProducto">
+        <option value="">Selecciona un producto</option>
+        <option th:each="producto : ${productos}"
+                th:value="${producto.idProducto}"
+                th:text="${producto.nombreProducto} + ' (stock: ' + ${producto.cantidad} + ') - $' + ${producto.precio}"
+                th:attr="data-precio=${producto.precio},data-stock=${producto.cantidad},data-nombre=${producto.nombreProducto}">
+        </option>
+    </select>
+
+    <input type="number" id="inputCantidad" placeholder="Cantidad" min="1">
+
+    <button type="button" onclick="agregarLinea()">Agregar producto</button>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio unitario</th>
+            <th>Subtotal</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="tablaDetalles"></tbody>
+</table>
+
+<h3>Total: $<span id="totalVenta">0</span></h3>
+
+<form th:action="@{/ventas/guardar}" method="post" id="formVenta">
+    <div id="inputsOcultos"></div>
+    <button type="submit">Registrar venta</button>
+</form>
+
+</div>
+</div>
+
+<script th:inline="javascript">
+    let detalles = [];
+
+    function agregarLinea() {
+        const select = document.getElementById("selectProducto");
+        const cantidad = parseInt(document.getElementById("inputCantidad").value);
+
+        if (!select.value || !cantidad || cantidad <= 0) {
+            alert("Selecciona un producto y una cantidad válida");
+            return;
+        }
+
+        const opcion = select.options[select.selectedIndex];
+        const stock = parseInt(opcion.getAttribute("data-stock"));
+
+        if (cantidad > stock) {
+            alert("Stock insuficiente. Disponible: " + stock);
+            return;
+        }
+
+        const precio = parseFloat(opcion.getAttribute("data-precio"));
+        const nombre = opcion.getAttribute("data-nombre");
+
+        detalles.push({
+            idProducto: select.value,
+            nombre: nombre,
+            cantidad: cantidad,
+            precio: precio,
+            subtotal: cantidad * precio
+        });
+
+        select.value = "";
+        document.getElementById("inputCantidad").value = "";
+
+        renderizar();
+    }
+
+    function quitarLinea(index) {
+        detalles.splice(index, 1);
+        renderizar();
+    }
+
+    function renderizar() {
+        const tbody = document.getElementById("tablaDetalles");
+        const inputsOcultos = document.getElementById("inputsOcultos");
+
+        tbody.innerHTML = "";
+        inputsOcultos.innerHTML = "";
+
+        let total = 0;
+
+        detalles.forEach((d, index) => {
+            total += d.subtotal;
+
+            tbody.innerHTML += `
+                <tr>
+                    <td>${d.nombre}</td>
+                    <td>${d.cantidad}</td>
+                    <td>$${d.precio}</td>
+                    <td>$${d.subtotal}</td>
+                    <td><button type="button" onclick="quitarLinea(${index})">Quitar</button></td>
+                </tr>
+            `;
+
+            inputsOcultos.innerHTML += `
+                <input type="hidden" name="idProducto" value="${d.idProducto}">
+                <input type="hidden" name="cantidad" value="${d.cantidad}">
+                <input type="hidden" name="precio" value="${d.precio}">
+            `;
+        });
+
+        document.getElementById("totalVenta").innerText = total;
+    }
+
+    document.getElementById("formVenta").addEventListener("submit", function (e) {
+        if (detalles.length === 0) {
+            e.preventDefault();
+            alert("Agrega al menos un producto a la venta");
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <title>Actualizar Gasto</title>
+</head>
+    <body>
+   <a th:href="@{/dashboard}" class="btn-regresar">
+    &#11013; Regresar
+</a>
+<div class="form-container">
+<div class="sales-form">
+<h2>Agregar gasto</h2>
+<form th:action="@{/gastos/guardar}"
+      th:object="${gasto}"
+      method="post">
+    <input type="hidden" th:field="*{idGasto}">
+    <input type="hidden" th:field="*{fecha}">
+  <label>Descripción</label>
+<input type="text" th:field="*{descripcionGasto}">
+<span style="color:red"
+      th:if="${#fields.hasErrors('descripcionGasto')}"
+      th:errors="*{descripcionGasto}">
+</span>
+   <label>Precio</label>
+<input type="number" step="0.01" th:field="*{precio}">
+<span style="color:red"
+      th:if="${#fields.hasErrors('precio')}"
+      th:errors="*{precio}">
+</span>
+    <button type="submit">
+        Guardar Gasto
+    </button>
+</form>
+</div>
+</div>
+        </body>
+</html>

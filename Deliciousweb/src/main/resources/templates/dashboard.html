@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DELICIOUS</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body class="dashboard-page">
+
+<div class="sidebar">
+
+    <h2>DELICIOUS</h2>
+
+    <a th:href="@{/dashboard}" class="acceso">🏠 Dashboard</a>
+
+    
+
+ 
+<button class="menu-btn">📊 Ventas ▼</button>
+<div class="submenu">
+    <a th:href="@{/ventas/nueva}">Registrar Venta</a>
+    <a th:href="@{/ventas}">Ver Ventas</a>
+</div>
+
+ <button class="menu-btn">💰 Gastos ▼</button>
+<div class="submenu">
+    <a th:href="@{/gastos/nuevo}">Registrar Gasto</a>
+    <a th:href="@{/gastos}">Ver Gastos</a>
+</div>
+    
+    <button class="menu-btn">📦 Inventario ▼</button>
+
+    <div class="submenu">
+
+        <a th:href="@{/inventario/nuevo}">
+            Agregar Producto
+        </a>
+
+        <a th:href="@{/inventario}">
+            Ver Inventario
+        </a>
+
+    </div>
+
+    <a th:href="@{/}" class="acceso">
+        🚪 Cerrar sesión
+    </a>
+
+</div>
+
+<div class="main-content">
+
+    <div class="header">
+
+        <h1>Panel principal</h1>
+
+        <p>Bienvenido al panel administrativo de Delicious.</p>
+
+        <select id="menu">
+
+            <option value="">Nuevo Registro ➕</option>
+
+           <option value="#">
+            Registrar Venta
+            </option>
+            
+            <option value="/gastos/nuevo">
+                Registrar Gasto
+            </option>
+
+            <option value="/inventario/nuevo">
+                Agregar Producto
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Ingresos</h3>
+            <p>$0</p>
+        </div>
+
+        <div class="card">
+            <h3>Gastos</h3>
+            <p>$0</p>
+        </div>
+
+        <div class="card">
+            <h3>Balance</h3>
+            <p>$0</p>
+        </div>
+
+    </div>
+
+    <div class="chart">
+
+        <h2>Resumen Financiero</h2>
+
+    </div>
+
+</div>
+
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+
+</body>
+</html>

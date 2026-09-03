@@ -1,0 +1,582 @@
+/* Contenedor principal del Sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 320px;
+  height: 100vh;
+
+  background-color: #050d78;
+  color: white;
+
+  padding: 45px 25px;
+
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Nombre DELICIOUS */
+.logo {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+
+  margin-bottom: 40px;
+}
+
+/* Menú */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Enlaces */
+.menu a {
+  color: white;
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  padding: 15px 20px;
+
+  border-radius: 20px;
+
+  transition: 0.2s;
+}
+
+/* Efecto al pasar el mouse */
+.menu a:hover {
+  background-color: #0800d8;
+}
+
+/* Contenido principal */
+main {
+  margin-left: 320px;
+}
+/* =========================
+   SIDEBAR DEL DASHBOARD
+   ========================= */
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 320px;
+  height: 100vh;
+
+  background-color: #050d78;
+  color: white;
+
+  padding: 45px 25px;
+
+  box-sizing: border-box;
+
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar h2 {
+  text-align: center;
+
+  font-size: 25px;
+  font-weight: bold;
+
+  margin-bottom: 40px;
+}
+
+/* Enlaces principales */
+
+.acceso {
+  display: block;
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  padding: 14px 20px;
+
+  border-radius: 20px;
+
+  margin-bottom: 10px;
+}
+
+.acceso:hover {
+  background-color: #0800d8;
+  color: white;
+}
+
+/* Botones desplegables */
+
+.menu-btn {
+  width: 100%;
+
+  border: none;
+
+  background-color: #0800d8;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  text-align: left;
+
+  padding: 14px 20px;
+
+  border-radius: 20px;
+
+  margin-bottom: 5px;
+
+  cursor: pointer;
+}
+
+.menu-btn:hover {
+  background-color: #1515e8;
+}
+
+/* Submenú */
+
+.submenu {
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+.submenu a {
+  display: block;
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 14px;
+
+  padding: 8px 10px;
+}
+
+.submenu a:hover {
+  color: #d6d6ff;
+  text-decoration: underline;
+}
+/* =========================
+   FORMULARIO DE PRODUCTO
+   ========================= */
+
+.formulario-producto {
+  width: 600px;
+  max-width: 90%;
+
+  padding: 35px;
+
+  background-color: white;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+  box-sizing: border-box;
+}
+
+.formulario-producto h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #050d78;
+}
+
+.formulario-producto form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.campo input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  color: #222;
+  font-size: 16px;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: #050d78;
+  box-shadow: 0 0 4px rgba(5, 13, 120, 0.3);
+}
+
+.formulario-producto button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #050d78;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.formulario-producto button:hover {
+  background-color: #0800d8;
+}
+.pagina-formulario {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 50px;
+
+  box-sizing: border-box;
+}
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f5f9;
+}
+
+.login-box {
+  width: 400px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+.login-box h1 {
+  text-align: center;
+  color: #050d78;
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-box button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #050d78;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background-color: #0800d8;
+}
+
+/* Formulario de Registrar Venta */
+.formulario-container {
+  width: 600px;
+  margin: 50px auto;
+  padding: 35px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.formulario-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #050d78;
+}
+
+/* Campos */
+.campo {
+  margin-bottom: 20px;
+}
+
+.campo label {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 16px;
+}
+
+/* Botón agregar producto */
+.formulario-container .menu-btn {
+  width: 100%;
+  margin-top: 5px;
+  padding: 14px;
+  border: none;
+  border-radius: 7px;
+  background-color: #050d78;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Botón registrar */
+.formulario-container form > button[type="submit"] {
+  display: block;
+  margin: 15px auto 0;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 7px;
+  background-color: #050d78;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.formulario-container form > button[type="submit"]:hover,
+.formulario-container .menu-btn:hover {
+  background-color: #0800d8;
+}
+
+.btn-regresar {
+  position: absolute !important;
+  left: 70px !important;
+  top: 30px !important;
+
+  width: auto !important;
+  margin: 0 !important;
+
+  padding: 9px 16px;
+
+  background-color: #050d78;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-regresar:hover {
+  background-color: #0800d8;
+  transform: translateX(-3px);
+}
+.ventas-page {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.ventas-contenido {
+  width: 85%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ventas-contenido h1 {
+  text-align: center;
+}
+.formulario-page {
+  width: 100%;
+  min-height: 100vh;
+  margin-left: 0 !important;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.formulario-container {
+  width: 600px;
+  max-width: 90%;
+  margin: 40px auto 0;
+}
+
+.gastos-page {
+  width: 100% !important;
+  min-height: 100vh;
+  margin-left: 0 !important;
+  padding: 20px 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.gastos-contenido {
+  width: 85%;
+  max-width: 1100px;
+  margin: 0 auto !important;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gastos-contenido h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.gastos-contenido table {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ========================= */
+/* DASHBOARD                 */
+/* ========================= */
+
+.dashboard {
+  padding: 35px 45px;
+  box-sizing: border-box;
+}
+
+/* Encabezado */
+
+.dashboard-header {
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  margin: 0 0 8px;
+  color: #050d78;
+  font-size: 32px;
+}
+
+.dashboard-header p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+}
+
+/* ========================= */
+/* TARJETAS                  */
+/* ========================= */
+
+.resumen-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.resumen-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+
+  border: none;
+
+  box-shadow: 0 6px 20px rgba(5, 13, 120, 0.1);
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.resumen-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(5, 13, 120, 0.16);
+}
+
+.resumen-card h3 {
+  margin: 0 0 12px;
+  color: #555;
+  font-size: 16px;
+}
+
+.resumen-card h2 {
+  margin: 0;
+  color: #050d78;
+  font-size: 30px;
+}
+
+.resumen-card p {
+  margin: 8px 0 0;
+  color: #888;
+  font-size: 14px;
+}
+
+/* ========================= */
+/* RESUMEN FINANCIERO        */
+/* ========================= */
+
+.resumen-financiero {
+  width: 100%;
+}
+
+.panel {
+  background: white;
+  padding: 25px 30px;
+
+  border-radius: 14px;
+
+  border: none;
+
+  box-shadow: 0 6px 20px rgba(5, 13, 120, 0.1);
+}
+
+.panel h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  color: #050d78;
+  font-size: 21px;
+}
+
+.fila-resumen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 5px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  color: #555;
+}
+
+.fila-resumen strong {
+  color: #050d78;
+}
+
+.fila-resumen.total {
+  border-bottom: none;
+  margin-top: 5px;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.fila-resumen.total strong {
+  color: #050d78;
+  font-size: 20px;
+}

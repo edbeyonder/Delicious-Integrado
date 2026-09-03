@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Gastos</title>
+<link rel="stylesheet" th:href="@{/tables.css}">
+</head>
+<body>
+<a th:href="@{/dashboard}" class="btn-regresar">
+    &#11013; Regresar
+</a>
+<h1>Gastos Registrados</h1>
+<div th:if="${mensaje}"
+     class="mensaje-exito"
+     th:text="${mensaje}">
+</div>
+<table>
+   <thead>
+<tr>
+    <th>Descripción</th>
+    <th>Precio</th>
+    <th>Fecha</th>
+</tr>
+</thead>
+   <tbody>
+    <tr th:each="gasto : ${gastos}">
+        <td th:text="${gasto.descripcionGasto}"></td>
+        <td th:text="${gasto.precio}"></td>
+        <td th:text="${gasto.fecha}"></td>
+    </tr>
+</tbody>
+</table>
+</body>
+</html>

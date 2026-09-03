@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Ventas</title>
+<link rel="stylesheet" th:href="@{/tables.css}">
+</head>
+<body>
+<a th:href="@{/dashboard}" class="btn-regresar">
+    &#11013; Regresar
+</a>
+<h1>Ventas Registradas</h1>
+<div th:if="${mensaje}"
+     class="mensaje-exito"
+     th:text="${mensaje}">
+</div>
+<table>
+   <thead>
+<tr>
+    <th>ID Venta</th>
+    <th>Fecha</th>
+    <th>Total</th>
+    <th>Acciones</th>
+</tr>
+</thead>
+   <tbody>
+    <tr th:each="venta : ${ventas}">
+        <td th:text="${venta.idVenta}"></td>
+        <td th:text="${venta.fecha}"></td>
+        <td th:text="${venta.total}"></td>
+         <td>
+   <a th:href="@{/ventas/detalle/{id}(id=${venta.idVenta})}"
+   class="btn-editar">
+    Ver detalle
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
