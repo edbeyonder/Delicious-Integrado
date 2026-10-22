@@ -1,4 +1,4 @@
-﻿package com.Delicious.Deliciousweb.config;
+package com.Delicious.Deliciousweb.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
