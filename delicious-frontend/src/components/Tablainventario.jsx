@@ -18,7 +18,7 @@ function Tablainventario({ inventario }) {
     }
 
     try {
-      await axios.delete(`http://localhost:8080/api/inventario/${id}`);
+      await axios.delete(`https://delicious-backend-uwql.onrender.com/api/inventario/${id}`);
 
       alert("🗑️ Producto eliminado correctamente");
 

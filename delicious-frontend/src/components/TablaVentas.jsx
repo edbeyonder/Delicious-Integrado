@@ -16,7 +16,7 @@ function TablaVentas({ ventas, onVentaEliminada }) {
     }
 
     try {
-      await axios.delete(`http://localhost:8080/api/venta/${id}`);
+      await axios.delete(`https://delicious-backend-uwql.onrender.com/api/venta/${id}`);
 
       alert("🗑️ Venta eliminada correctamente");
 

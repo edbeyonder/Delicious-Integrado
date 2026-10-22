@@ -9,7 +9,7 @@ function VerVentasPage() {
 
   const cargarVentas = () => {
     axios
-      .get("http://localhost:8080/api/venta")
+      .get("https://delicious-backend-uwql.onrender.com/api/venta")
       .then((response) => {
         setVentas(response.data);
       })

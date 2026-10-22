@@ -11,7 +11,7 @@ function RegistrarVentaPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/inventario")
+      .get("https://delicious-backend-uwql.onrender.com/api/inventario")
       .then((response) => {
         setInventario(response.data);
       })
@@ -67,7 +67,7 @@ function RegistrarVentaPage() {
     }
 
     try {
-      await axios.post("http://localhost:8080/api/venta", {
+      await axios.post("https://delicious-backend-uwql.onrender.com/api/venta", {
         detalles: detalles.map((d) => ({
           producto: { idProducto: d.producto.idProducto },
           cantidad: d.cantidad,

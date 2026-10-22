@@ -32,13 +32,13 @@ function FproductoPage() {
 
       if (productoEditar) {
         await axios.put(
-          `http://localhost:8080/api/inventario/${productoEditar.idProducto}`,
+          `https://delicious-backend-uwql.onrender.com/api/inventario/${productoEditar.idProducto}`,
           producto,
         );
 
         alert("✏️ Producto actualizado correctamente");
       } else {
-        await axios.post("http://localhost:8080/api/inventario", producto);
+        await axios.post("https://delicious-backend-uwql.onrender.com/api/inventario", producto);
 
         alert("✅ Producto registrado correctamente");
       }

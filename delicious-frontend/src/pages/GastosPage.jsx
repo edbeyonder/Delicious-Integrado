@@ -8,7 +8,7 @@ function GastosPage() {
 
   const cargarGastos = () => {
     axios
-      .get("http://localhost:8080/api/gasto")
+      .get("https://delicious-backend-uwql.onrender.com/api/gasto")
       .then((response) => {
         setGastos(response.data);
       })

@@ -21,7 +21,7 @@ function LoginPage() {
 
     try {
       // Envía las credenciales al Back-end de Spring Boot.
-      const respuesta = await fetch("http://localhost:8080/api/login", {
+      const respuesta = await fetch("https://delicious-backend-uwql.onrender.com/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
