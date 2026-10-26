@@ -1,21 +1,25 @@
+
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 function Navbar() {
   const navigate = useNavigate();
   const [ventasAbierto, setVentasAbierto] = useState(false);
   const [gastosAbierto, setGastosAbierto] = useState(false);
   const [inventarioAbierto, setInventarioAbierto] = useState(false);
+
   const cerrarSesion = () => {
     sessionStorage.removeItem("sesionIniciada");
     navigate("/");
   };
+
   return (
     <aside className="sidebar">
       <h2>DELICIOUS</h2>
 
-      <a href="/dashboard" className="acceso">
+      <Link to="/dashboard" className="acceso">
         🏠 Dashboard
-      </a>
+      </Link>
 
       {/* VENTAS */}
       <button
@@ -27,8 +31,8 @@ function Navbar() {
 
       {ventasAbierto && (
         <div className="submenu">
-          <a href="/registrarventa">Registrar Venta</a>
-          <a href="/ventas">Ver Ventas</a>
+          <Link to="/registrarventa">Registrar Venta</Link>
+          <Link to="/ventas">Ver Ventas</Link>
         </div>
       )}
 
@@ -42,8 +46,8 @@ function Navbar() {
 
       {gastosAbierto && (
         <div className="submenu">
-          <a href="/gastos/nuevo">Registrar Gasto</a>
-          <a href="/gastos">Ver Gastos</a>
+          <Link to="/gastos/nuevo">Registrar Gasto</Link>
+          <Link to="/gastos">Ver Gastos</Link>
         </div>
       )}
 
@@ -57,10 +61,11 @@ function Navbar() {
 
       {inventarioAbierto && (
         <div className="submenu">
-          <a href="/inventario/nuevo">Agregar Producto</a>
-          <a href="/inventario">Ver Inventario</a>
+          <Link to="/inventario/nuevo">Agregar Producto</Link>
+          <Link to="/inventario">Ver Inventario</Link>
         </div>
       )}
+
       <button onClick={cerrarSesion} className="acceso">
         🚪 Cerrar sesión
       </button>
